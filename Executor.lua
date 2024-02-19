@@ -1327,7 +1327,7 @@ UserInputService.InputChanged:Connect(function(input: InputObject)
 end)
 
 UserInputService.InputBegan:Connect(function(input: InputObject)
-	if input.KeyCode == Enum.KeyCode.H then
+	if input.KeyCode == Enum.KeyCode.H and not UserInputService:GetFocusedTextBox() then
 		UI.Enabled = not UI.Enabled
 	end
 end)
