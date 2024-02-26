@@ -972,7 +972,7 @@ function Highlighter._getLabelingInfo(textObject: TextObject)
 		textColor = Theme.getColor("iden"),
 		textFont = textObject.FontFace,
 		textSize = textObject.TextSize,
-		labelSize = UDim2.new(1, 0, 0, math.ceil(textHeight)),
+		labelSize = UDim2.new(1, 0, 0, 16),
 	}
 end
 
