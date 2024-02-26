@@ -1266,12 +1266,10 @@ local function BuildLines()
 		end
 	end
 
-	UI.Holder.Scroll.CanvasSize = UDim2.new(0, UI.Holder.Scroll.Code.TextBounds.X, 0, 16 * #LineBreaks)
+	UI.Holder.Scroll.CanvasSize = UDim2.new(0, UI.Holder.Scroll.Code.TextBounds.X + 16, 0, UI.Holder.Scroll.Code.SyntaxHighlights.UIListLayout.AbsoluteContentSize.Y + 16)
 
-	local CursorBounds = TextService:GetTextSize(UI.Holder.Scroll.Code.Text:sub(1, UI.Holder.Scroll.Code.CursorPosition), 16, Enum.Font.Arial, UI.Holder.Scroll.Code.AbsoluteSize)
-	if CursorBounds.Y >= (UI.Holder.Scroll.Code.AbsoluteSize.Y - 16) then
-		UI.Holder.Scroll.CanvasPosition = Vector2.new(0, CursorBounds.Y - 16)
-	end
+	--[[local CursorBounds = TextService:GetTextSize(UI.Holder.Scroll.Code.Text:sub(1, UI.Holder.Scroll.Code.CursorPosition), 16, Enum.Font.Arial, UI.Holder.Scroll.Code.AbsoluteSize)
+	UI.Holder.Scroll.CanvasPosition = Vector2.new(CursorBounds.X, CursorBounds.Y)]]
 end
 
 UI.Holder.Buttons.Clear.MouseButton1Down:Connect(function()
